@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <title>Lista de contatos salvos</title>
+
+</head>
+
+<body>
+
+  <div class="container mt-3">
+
+    <h2>Registros</h2>
+
+    <table border="1" class="table">
+      <thead>
+        <tr>
+          <td>Nome</td>
+          <td>Sobrenome</td>
+          <td>Ação</td>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% data.forEach(function(details) { %>
+
+          <tr>
+            <td>
+              <%= details.name %>
+            </td>
+            <td>
+              <%= details.surname %>
+            </td>
+            <td><a href="/edit/<%= details._id %>">Editar</a> - <a href="/delete/<%= details._id %>">Deletar</a></td>
+          </tr>
+          <% }) %>
+      </tbody>
+
+    </table>
+
+    <button class="mt-3"><a href="/">Novo</a></button>
+
+  </div>
+
+</body>
+
+</html>
